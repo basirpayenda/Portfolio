@@ -1,0 +1,131 @@
+
+@import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    font-family: 'Poppins', Verdana, Geneva, Tahoma, sans-serif;
+
+}
+
+:root{
+    --bg-color: lightblue;
+}
+
+/* typography */
+ul{
+    margin: 0;
+    padding: 0;
+}
+h1, h2, h3{
+    margin: 0;
+}
+/***********************
+ navigation bar
+***********************/
+header{
+    background-color: #fafbfd;
+    position: fixed;
+    width: 100%;
+    border-bottom: 1px solid #ccc;
+    z-index:999;
+    height: 8vh;
+    border: 2px solid #e9edf8;
+    color: #1e7b85;
+    display: flex;
+    justify-content: center;
+}
+
+.logo{
+    text-align: center;
+}
+/* nav */
+nav{
+    position: absolute;
+    top: 100%;
+    background-color:#fafbfd;
+    width: 100%;
+    transform: scale(1, 0);
+    transform-origin: top;
+    transition: transform 300ms ease-in-out;
+    border: 2px solid #e9edf8;
+}
+.nav-list{
+    list-style: none;
+    margin-left: 1em;
+}
+
+.nav-link{
+    display: block;
+    padding: 0.5em;
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: #1e7b85;
+}
+
+.nav-link:hover{
+    color: #033a41;
+}
+
+
+/* nav-toggler */
+.nav-toggler{
+    display: none;
+}
+.nav-toggler-label{
+    position: absolute;
+    top: 0px;
+    left: 1em;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.nav-toggler-label .bar, 
+.nav-toggler-label .bar:after,
+.nav-toggler-label .bar:before{
+    height: 4px;
+    width: 2em;
+    background-color: #1e7b85;
+    position: relative;
+}
+
+.nav-toggler-label .bar:after,
+.nav-toggler-label .bar:before{
+    content: '';
+    position: absolute;
+}
+
+.nav-toggler-label .bar:after{
+    top: -8px;
+}
+.nav-toggler-label .bar:before{
+    top: 8px;
+}
+
+.nav-toggler:checked ~ nav{
+    transform: scale(1, 1);
+}
+
+
+/* media for navigation bar */
+@media only screen and (min-width:786px){
+    header{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .nav-toggler-label{
+        display: none;
+    }
+    nav{
+        all: unset;
+        transform: scale(1,1);
+    }
+    .nav-list{
+        display: flex;
+    }
+}
+
